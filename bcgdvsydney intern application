@@ -1,0 +1,18 @@
+C:\Users\gaura
+λ python
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 19:29:22) [MSC v.1916 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+>>> url = 'https://interns.bcgdvsydney.com/api/v1/key'
+>>> response = requests.get(url)
+>>> response.json()
+{'key': '46d03e88-f5da-476e-a8a2-75f268d37c58', 'expires': '2019-08-22 01:38:43.923906'}
+>>> url = 'https://interns.bcgdvsydney.com/api/v1/submit?apiKey=46d03e88-f5da-476e-a8a2-75f268d37c58'
+>>> jsonPayload = {'name':'Gaurav Rauniyar','email':'gaurav21181@gmail.com'}
+>>> response = requests.post(url,json=jsonPaylaod)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'jsonPaylaod' is not defined
+>>> response = requests.post(url,json=jsonPayload)
+>>> response.json()
+{'name': 'Gaurav Rauniyar', 'email': 'gaurav21181@gmail.com'}
